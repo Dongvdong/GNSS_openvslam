@@ -1,0 +1,57 @@
+#==============#
+# 相机参数 #
+#==============#
+
+Camera.name: "ehang_left"
+Camera.setup: "monocular"
+Camera.model: "fisheye"
+
+Camera.fx: 355.0974745605948
+Camera.fy: 355.47832693317105
+Camera.cx: 357.7074039567714
+Camera.cy: 351.0244037313849
+ 
+Camera.k1: -0.023790306606729556
+Camera.k2: -0.0007571494794293715
+Camera.p1: 0.00016452517056601848
+Camera.p2: -0.0005743824914513448
+Camera.k3: 0
+Camera.k4: 0
+
+Initial.lat: 25.449905
+Initial.lon: 112.7133739
+Initial.alt: 0
+
+Camera.fps: 10
+Camera.cols: 720
+Camera.rows: 720
+
+Camera.color_order: "RGB"
+
+
+#Initializer.num_min_triangulated_pts: 10
+#Initializer.parallax_deg_threshold: 0.1
+Feature.max_num_keypoints: 3000
+#===========================#
+# 显示参数 #
+#===========================#
+
+PangolinViewer.keyframe_size: 0.07
+PangolinViewer.keyframe_line_width: 2
+PangolinViewer.graph_line_width: 1
+PangolinViewer.point_size: 2
+PangolinViewer.camera_size: 0.08
+PangolinViewer.camera_line_width: 3
+PangolinViewer.viewpoint_x: 0
+PangolinViewer.viewpoint_y: -0.65
+PangolinViewer.viewpoint_z: -1.9
+PangolinViewer.viewpoint_f: 400
+
+#===========================#
+# 紧急建图参数 #
+#===========================#
+
+Emergency.InputMap_type: "optimize" # map1 或者optimize
+Emergency.DB_type: "0" # 0 或 1
+ # 需要修改
+Marker.Num: 0

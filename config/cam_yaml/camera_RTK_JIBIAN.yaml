@@ -1,0 +1,29 @@
+#==============#
+# 相机参数 # 原图3000*2000多需要rezize到 1920*1080
+#==============#
+  
+Camera.name: "RTK无人机"
+Camera.setup: "monocular" # 单目"Monocular", 双目"Stereo", 深度相机"RGBD"
+Camera.model: "perspective" #perspective 正常相机  fisheye 鱼眼相机
+  
+#相机参数
+Camera.fps: 30
+Camera.cols: 1920
+Camera.rows: 1080
+  
+#内参
+Camera.fx: 1279.2771930 #1418
+Camera.fy: 1077.5161184 #895.8815
+Camera.cx: 960 #642.2123
+Camera.cy: 540 #363.5093
+  
+#畸变系数
+Camera.k1: -0.259024
+Camera.k2: 0.100558
+Camera.p1: 0.00070782
+Camera.p2: -0.00128356
+Camera.k3: -0.0303751
+Camera.k4: 0.0
+  
+  
+Camera.color_order: "RGB" #"Gray", "RGB", "BGR"
