@@ -78,7 +78,7 @@ find_package(Eigen3 3.3 REQUIRED)
 # yaml-cpp
 find_package(yaml-cpp REQUIRED)
 
-#设置opencv安装路径
+#设置opencv安装路径 手动指定
 set(CMAKE_PREFIX_PATH "/home/dongdong/1sorftware/1work/opencv/opencv455/install")
 
 find_package(OpenCV REQUIRED)
