@@ -1,0 +1,53 @@
+#==============#
+# Camera Model #
+#==============#
+
+Camera.name: EH2022left monocular
+Camera.setup: monocular
+Camera.model: perspective
+Camera.fx: 1220
+Camera.fy: 1220
+Camera.cx: 960
+Camera.cy: 540
+Camera.k1: -0
+Camera.k2: 0
+Camera.p1: 0
+Camera.p2: 0
+Camera.k3: -0
+Camera.k4: 0
+Camera.fps: 10
+Camera.cols: 1920
+Camera.rows: 1080
+Camera.color_order: RGB
+Initial.lat: 34.2315085
+Initial.lon: 108.9263953333333
+Initial.alt: 372.933
+Feature.max_num_keypoints: 3000
+Feature.scale_factor: 1.2
+Feature.num_levels: 8
+PangolinViewer.keyframe_size: 0.07
+PangolinViewer.keyframe_line_width: 2
+PangolinViewer.graph_line_width: 1
+PangolinViewer.point_size: 2
+PangolinViewer.camera_size: 0.08
+PangolinViewer.camera_line_width: 3
+PangolinViewer.viewpoint_x: 0
+PangolinViewer.viewpoint_y: -0.65
+PangolinViewer.viewpoint_z: -1.9
+PangolinViewer.viewpoint_f: 400
+Marker.Num: 0
+vAcc: 1.0
+hAcc: 1.0
+Fixed.altitude_flag: 0
+Fixed.altitude: 400.0 
+Save.newmap: 1
+Save.data: 1
+op.is_Second_Optimize: 0
+op.Second_Optimize_Th: 0  
+op.Remove_Kayframe_Th: 6.0
+op.Global_Optimize_Th: 1.0 
+Loop_Th: 80.0 
+Relocalize_Th: 80.0 
+Relocalize_KF_Th: 3.0 
+V_Instant_Th: 200.0
+Tracking_CF_Th: 10.0

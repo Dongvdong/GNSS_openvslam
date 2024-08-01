@@ -1,6 +1,9 @@
+
+# 编译指令
+
 mkdir build && cd build
 cmake \
-    -DBUILD_WITH_MARCH_NATIVE=ON \
+    -DBUILD_WITH_MARCH_NATIVE=OFF \
     -DUSE_PANGOLIN_VIEWER=ON \
     -DUSE_SOCKET_PUBLISHER=OFF \
     -DUSE_STACK_TRACE_LOGGER=ON \
@@ -9,58 +12,22 @@ cmake \
     ..
 make -j4
 
- -DBUILD_WITH_MARCH_NATIVE=OFF
+根据g2o编译 -DBUILD_WITH_MARCH_NATIVE=OFF 修改标志
 
-cd /home/r9000k/v2_project/v3_SLAM/v4_openvslam/openvslam-comments-main/build
+cd  /build
 
+#建图
 ./run_image_slam \
--v /home/r9000k/v2_project/v3_SLAM/v4_openvslam/openvslam-comments-main/config/orb_vocab.dbow2 \
--i /media/r9000k/Elements/项目/高斯slam/data/FHY_img \
--c /media/r9000k/Elements/项目/高斯slam/data/FHY_config/FHY_config.yaml  \
---map-db /media/r9000k/Elements/项目/高斯slam/data//MapResult1.msg
+-v ../config/orb_vocab.dbow2 \
+-i /home/dongdong/2project/0data/NWPU/FHY_img \
+-c /home/dongdong/2project/0data/NWPU/FHY_config/FHY_config.yaml  \
+--map-db /home/dongdong/2project/0data/NWPU/Map.msg
 
 
-
-// 建图
-./run_image_slam \
--v /home/dongdong/v2_Project/v3_SLAM/v4_openvslam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/orb_vocab.dbow2 \
--i /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehang代码/data_1build/FHY_img \
--c /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehang代码/data_1build/FHY_config/FHY_config.yaml  \
---map-db /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehang代码/data_1build/MapResult1.msg
-
-// 建图
-./run_image_slam \
--v /home/dongdong/v2_Project/v3_SLAM/v4_openvslam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/orb_vocab.dbow2 \
--i /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehangCode/source_code/data_remote/data/xiaomi_data1/FHY_img \
--c /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehangCode/source_code/data_remote/data/xiaomi_data1/FHY_config/FHY_config.yaml  \
---map-db /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehangCode/source_code/data_remote/data/xiaomi_data1/MapResult1.msg
-
-./run_image_slam \
--v /home/dongdong/v2_Project/v3_SLAM/v4_openvslam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/orb_vocab.dbow2 \
--i /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehangCode/source_code/data_remote/data/xiaomi_data0/FHY_img \
--c /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehangCode/source_code/data_remote/data/xiaomi_data0/FHY_config/FHY_config.yaml  \
---map-db /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehangCode/source_code/data_remote/data/xiaomi_data0/MapResult1.msg
-
-
-
-
-//重定位
+#重定位
 ./run_image_localization \
--v /home/dongdong/v2_Project/v3_SLAM/v4_openvslam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/orb_vocab.dbow2 \
--i /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehang代码/data_2locaton/FHY_img \
--c /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehang代码/data_2locaton/FHY_config/FHY_config.yaml  \
---map-db /home/dongdong/v2_Project/v3_SLAM/V3_EHang/1_2ehang代码/data_1build/MapResult1.msg
+-v ../config/orb_vocab.dbow2 \
+-i /home/dongdong/2project/0data/NWPU/FHY_img \
+-c /home/dongdong/2project/0data/NWPU/FHY_config/FHY_config.yaml  \
+--map-db /home/dongdong/2project/0data/NWPU/Map.msg
 
-
-./run_image_slam \
--v /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/orb_vocab.dbow2 \
--i /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v3_yihang/v4_nuc_v1/code/V1_remote_nuc/data_remote/data/ehang_20220601_3_test/FHY_img \
--c /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/ehang_camera_left.yaml  \
---map-db /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/20220617150912802_v1.msg
-
-
-./run_image_localization \
--v /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/orb_vocab.dbow2 \
--i /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v3_yihang/v4_nuc_v1/code/V1_remote_nuc/data_remote/data/ehang_20220601_3_test/FHY_img \
--c /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/cam_yaml/ehang_camera_left.yaml  \
---map-db /media/dongdong/Project/v0_Project/V2_labray/v00_slam/v2_openvslam_source/openvslam-comments-main/openvslam-comments-main/config/map_msg/20220617150912802_v1.msg
