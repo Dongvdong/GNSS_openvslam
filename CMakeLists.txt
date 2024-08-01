@@ -80,9 +80,10 @@ find_package(yaml-cpp REQUIRED)
 
 #设置opencv安装路径 手动指定
 set(CMAKE_PREFIX_PATH "/home/dongdong/1sorftware/1work/opencv/opencv455/install")
-
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
+
+
 
 #find_package(OpenCV 3.3.1 QUIET
 #             COMPONENTS

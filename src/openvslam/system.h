@@ -4,6 +4,7 @@
 #include "openvslam/type.h"
 #include "openvslam/data/bow_vocabulary.h"
 
+#include <memory>
 #include <string>
 #include <thread>
 #include <mutex>

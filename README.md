@@ -1,9 +1,7 @@
 
 
 
-1 
-
-===================编译问题===============================
+# 编译问题
 
 1 修改opencv路径
 
@@ -20,10 +18,11 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 
 # 编译指令
+https://www.cnblogs.com/gooutlook/p/14238636.html
 
 mkdir build && cd build
 cmake \
-    -DBUILD_WITH_MARCH_NATIVE=OFF \
+    -DBUILD_WITH_MARCH_NATIVE=ON \
     -DUSE_PANGOLIN_VIEWER=ON \
     -DUSE_SOCKET_PUBLISHER=OFF \
     -DUSE_STACK_TRACE_LOGGER=ON \
@@ -32,8 +31,26 @@ cmake \
     ..
 make -j4
 
-根据g2o编译 -DBUILD_WITH_MARCH_NATIVE=OFF 修改标志
+对应g2o编译 -DBUILD_WITH_MARCH_NATIVE=ON 不然导致可视化图有问题
+mkdir build && cd build
+cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DCMAKE_CXX_FLAGS=-std=c++11 \
+    -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_UNITTESTS=OFF \
+    -DBUILD_WITH_MARCH_NATIVE=ON \
+    -DG2O_USE_CHOLMOD=OFF \
+    -DG2O_USE_CSPARSE=ON \
+    -DG2O_USE_OPENGL=OFF \
+    -DG2O_USE_OPENMP=ON \
+    ..
+make -j8
+make install
 
+
+
+# 运行指令
 cd  /build
 
 #建图
