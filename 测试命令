@@ -9,7 +9,7 @@ cmake \
     ..
 make -j4
 
-
+ -DBUILD_WITH_MARCH_NATIVE=OFF
 
 cd /home/r9000k/v2_project/v3_SLAM/v4_openvslam/openvslam-comments-main/build
 

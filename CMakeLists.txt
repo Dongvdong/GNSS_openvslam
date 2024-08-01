@@ -79,22 +79,22 @@ find_package(Eigen3 3.3 REQUIRED)
 find_package(yaml-cpp REQUIRED)
 
 #设置opencv安装路径
-set(CMAKE_PREFIX_PATH "/home/r9000k/v1_software/opencv/opencv349/install")
-#find_package(OpenCV REQUIRED)
-#include_directories(${OpenCV_INCLUDE_DIRS})
+set(CMAKE_PREFIX_PATH "/home/dongdong/1sorftware/1work/opencv/opencv455/install")
 
-# OpenCV
-find_package(OpenCV 3.3.1 QUIET
-             COMPONENTS
-             core imgcodecs videoio features2d calib3d highgui)
-if(NOT OpenCV_FOUND)
-    find_package(OpenCV 4.0 REQUIRED
-                 COMPONENTS
-                 core imgcodecs videoio features2d calib3d highgui)
-    if(NOT OpenCV_FOUND)
-        message(FATAL_ERROR "OpenCV >= 3.3.1 not found")
-    endif()
-endif()
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+#find_package(OpenCV 3.3.1 QUIET
+#             COMPONENTS
+#             core imgcodecs videoio features2d calib3d highgui)
+#if(NOT OpenCV_FOUND)
+#    find_package(OpenCV 4.0 REQUIRED
+#                 COMPONENTS
+#                 core imgcodecs videoio features2d calib3d highgui)
+#    if(NOT OpenCV_FOUND)
+#        message(FATAL_ERROR "OpenCV >= 3.3.1 not found")
+#    endif()
+#endif()
 message(STATUS "Use OpenCV ${OpenCV_VERSION}")
 
 # ----- Install configuration -----
