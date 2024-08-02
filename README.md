@@ -14,7 +14,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 
 3 G2O编译时候参数注意，和SLAM阶段对应参数设置
--DBUILD_WITH_MARCH_NATIVE=OFF （默认教程是on 但是slam14讲代码用不了好像，段错误，所以关了，这里也跟着关闭）
+-DBUILD_WITH_MARCH_NATIVE=ON
 
 
 # 编译指令
