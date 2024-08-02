@@ -1,8 +1,19 @@
 #==============#
 # Camera Model #
 #==============#
+# 数据文件夹
+Config_PATH : /home/dongdong/2project/0data/NWPU/
+image_dir_path : img #图像文件夹
+map_db_path : Map.msg
+GNSS_USE : 1  #1 使用 0 不用
+GNSS_PSTH: config/gps.txt
+Initial.lat: 34.2315085
+Initial.lon: 108.9263953333333
+Initial.alt: 372.933
+vocab_file_path : ../config/orb_vocab.dbow2
+mask_img_path : "none.jpg"
 
-Camera.name: EH2022left monocular
+Camera.name:  monocular
 Camera.setup: monocular
 Camera.model: perspective
 Camera.fx: 1220
@@ -19,9 +30,6 @@ Camera.fps: 10
 Camera.cols: 1920
 Camera.rows: 1080
 Camera.color_order: RGB
-Initial.lat: 34.2315085
-Initial.lon: 108.9263953333333
-Initial.alt: 372.933
 Feature.max_num_keypoints: 3000
 Feature.scale_factor: 1.2
 Feature.num_levels: 8
