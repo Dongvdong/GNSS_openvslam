@@ -45,7 +45,7 @@ cmake \
     -DG2O_USE_OPENGL=OFF \
     -DG2O_USE_OPENMP=ON \
     ..
-make -j8
+make -j12
 make install
 
 

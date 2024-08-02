@@ -23,11 +23,13 @@ cd  /build
 -c /home/dongdong/2project/0data/NWPU/FHY_config/FHY_config.yaml  \
 --map-db /home/dongdong/2project/0data/NWPU/Map.msg
 
-
 #重定位
-./run_image_localization \
 -v ../config/orb_vocab.dbow2 \
--i /home/dongdong/2project/0data/NWPU/FHY_img \
--c /home/dongdong/2project/0data/NWPU/FHY_config/FHY_config.yaml  \
+-i /home/dongdong/2project/0data/NWPU/img \
+-c /home/dongdong/2project/0data/NWPU/config/config.yaml  \
 --map-db /home/dongdong/2project/0data/NWPU/Map.msg
 
+#建图GNSS====================
+
+
+./run_image_slam_gnss -c /home/dongdong/2project/0data/NWPU/config/config.yaml 

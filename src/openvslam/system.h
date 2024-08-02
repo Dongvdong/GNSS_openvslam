@@ -1,8 +1,14 @@
 #ifndef OPENVSLAM_SYSTEM_H
 #define OPENVSLAM_SYSTEM_H
 
+
+
 #include "openvslam/type.h"
 #include "openvslam/data/bow_vocabulary.h"
+
+
+//#include "API_GNSS_ENU_TXT_YAML.h" // 自己的类
+
 
 #include <memory>
 #include <string>
