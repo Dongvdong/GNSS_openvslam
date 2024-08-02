@@ -12,9 +12,11 @@ cmake \
     ..
 sudo make -j12
 
-根据g2o编译 -DBUILD_WITH_MARCH_NATIVE=ON 修改标志
 
 cd  /build
+
+
+
 
 #建图
 ./run_image_slam \
@@ -23,6 +25,7 @@ cd  /build
 -c /home/dongdong/2project/0data/NWPU/FHY_config/FHY_config.yaml  \
 --map-db /home/dongdong/2project/0data/NWPU/Map.msg
 
+# sudo aptitude install libclang-dev
 
 #重定位
 ./run_image_localization \
@@ -31,3 +34,19 @@ cd  /build
 -c /home/dongdong/2project/0data/NWPU/FHY_config/FHY_config.yaml  \
 --map-db /home/dongdong/2project/0data/NWPU/Map.msg
 
+# ===========================================
+
+#建图
+./run_image_slam \
+-v ../config/orb_vocab.dbow2 \
+-i /home/r9000k/v2_project/data/NWPU/FHY_img \
+-c /home/r9000k/v2_project/data/NWPU/FHY_config/FHY_config.yaml  \
+--map-db /home/r9000k/v2_project/data/NWPU/Map.msg
+
+
+#重定位
+./run_image_localization \
+-v ../config/orb_vocab.dbow2 \
+-i /home/r9000k/v2_project/data/NWPU/FHY_img \
+-c /home/r9000k/v2_project/data/NWPU/FHY_config/FHY_config.yaml  \
+--map-db /home/r9000k/v2_project/data/NWPU/Map.msg
