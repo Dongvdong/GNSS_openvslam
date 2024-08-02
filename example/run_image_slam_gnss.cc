@@ -6,7 +6,7 @@
 #include "socket_publisher/publisher.h"
 #endif
 
-#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.cc" // 自己的类
+#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.h" // 自己的类
 
 #include "openvslam/system.h"
 #include "openvslam/config.h"

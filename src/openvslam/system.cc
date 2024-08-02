@@ -13,7 +13,7 @@
 #include "openvslam/publish/frame_publisher.h"
 
 
-#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.cc" 
+//#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.cc" 
 
 
 #include <thread>
