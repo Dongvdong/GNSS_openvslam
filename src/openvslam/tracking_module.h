@@ -13,6 +13,9 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
 
+#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.h" // 自己的类
+
+
 namespace openvslam {
 
 class system;
@@ -72,6 +75,9 @@ public:
     //! (NOTE: distorted images are acceptable if calibrated)
     // 如果经过校准，失真的图像是可以接受的
     Mat44_t track_monocular_image(const cv::Mat& img, const double timestamp, const cv::Mat& mask = cv::Mat{});
+
+    Mat44_t track_monocular_image_gnss(const cv::Mat& img, const double timestamp,gnss_data &img_gnss, const cv::Mat& mask = cv::Mat{});
+
 
     //! Track a stereo frame
     //! (Note: Left and Right images must be stereo-rectified)

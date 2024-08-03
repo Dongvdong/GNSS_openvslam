@@ -237,12 +237,14 @@ void system::abort_loop_BA() {
 }
 
 // 自己添加
-Mat44_t system::feed_monocular_frame_gnss(const cv::Mat& img, const double timestamp, const cv::Mat& mask,std::vector<gnss_data> &gnss_Lists ) {
+Mat44_t system::feed_monocular_frame_gnss(const cv::Mat& img, const double timestamp, gnss_data &img_gnss ,const cv::Mat& mask ) {
     assert(camera_->setup_type_ == camera::setup_type_t::Monocular);
 
     check_reset_request();
 
-    const Mat44_t cam_pose_cw = tracker_->track_monocular_image(img, timestamp, mask);
+    std::cout<< "2 system/feed_monocular_frame_gnss  img_gnss  " << img_gnss.time << std::endl;
+
+    const Mat44_t cam_pose_cw = tracker_->track_monocular_image_gnss(img, timestamp,img_gnss, mask);
 
     frame_publisher_->update(tracker_);
     if (tracker_->tracking_state_ == tracker_state_t::Tracking) {

@@ -98,6 +98,38 @@ Mat44_t tracking_module::track_monocular_image(const cv::Mat& img, const double 
     return curr_frm_.cam_pose_cw_;
 }
 
+
+
+Mat44_t tracking_module::track_monocular_image_gnss(const cv::Mat& img, const double timestamp,gnss_data &img_gnss, const cv::Mat& mask ){
+    
+    const auto start = std::chrono::system_clock::now();
+    
+    std::cout<< "3 tracking_module/track_monocular_image_gnss  img_gnss  " << img_gnss.time << std::endl;
+
+
+
+    // color conversion
+    img_gray_ = img;
+    util::convert_to_grayscale(img_gray_, camera_->color_order_);
+
+    // create current frame object
+    if (tracking_state_ == tracker_state_t::NotInitialized || tracking_state_ == tracker_state_t::Initializing) {
+        curr_frm_ = data::frame(img_gray_, timestamp, ini_extractor_left_, bow_vocab_, camera_, cfg_->true_depth_thr_, mask);
+    }
+    else {
+        curr_frm_ = data::frame(img_gray_, timestamp, extractor_left_, bow_vocab_, camera_, cfg_->true_depth_thr_, mask);
+    }
+
+    track();
+
+    const auto end = std::chrono::system_clock::now();
+    elapsed_ms_ = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+    return curr_frm_.cam_pose_cw_;
+}
+
+
+
 Mat44_t tracking_module::track_stereo_image(const cv::Mat& left_img_rect, const cv::Mat& right_img_rect, const double timestamp, const cv::Mat& mask) {
     const auto start = std::chrono::system_clock::now();
 

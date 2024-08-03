@@ -48,6 +48,8 @@ add_library(${PROJECT_NAME}
             ${CMAKE_CURRENT_SOURCE_DIR}/global_optimization_module.h
             ${CMAKE_CURRENT_SOURCE_DIR}/config.cc
             ${CMAKE_CURRENT_SOURCE_DIR}/system.cc
+            ${CMAKE_CURRENT_SOURCE_DIR}/gnss_src/API_GNSS_ENU_TXT_YAML.cc
+            ${CMAKE_CURRENT_SOURCE_DIR}/gnss_src/API_GNSS_ENU_TXT_YAML.h
             ${CMAKE_CURRENT_SOURCE_DIR}/tracking_module.cc
             ${CMAKE_CURRENT_SOURCE_DIR}/mapping_module.cc
             ${CMAKE_CURRENT_SOURCE_DIR}/global_optimization_module.cc)
