@@ -236,7 +236,23 @@ void system::abort_loop_BA() {
     global_optimizer_->abort_loop_BA();
 }
 
-Mat44_t system::feed_monocular_frame(const cv::Mat& img, const double timestamp, const cv::Mat& mask) {
+// 自己添加
+Mat44_t system::feed_monocular_frame_gnss(const cv::Mat& img, const double timestamp, const cv::Mat& mask,std::vector<gnss_data> &gnss_Lists ) {
+    assert(camera_->setup_type_ == camera::setup_type_t::Monocular);
+
+    check_reset_request();
+
+    const Mat44_t cam_pose_cw = tracker_->track_monocular_image(img, timestamp, mask);
+
+    frame_publisher_->update(tracker_);
+    if (tracker_->tracking_state_ == tracker_state_t::Tracking) {
+        map_publisher_->set_current_cam_pose(cam_pose_cw);
+    }
+
+    return cam_pose_cw;
+}
+
+Mat44_t system::feed_monocular_frame(const cv::Mat& img, const double timestamp, const cv::Mat& mask ) {
     assert(camera_->setup_type_ == camera::setup_type_t::Monocular);
 
     check_reset_request();

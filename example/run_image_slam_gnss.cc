@@ -6,7 +6,7 @@
 #include "socket_publisher/publisher.h"
 #endif
 
-#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.h" // 自己的类
+#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.cc" // 自己的类
 
 #include "openvslam/system.h"
 #include "openvslam/config.h"
@@ -197,7 +197,7 @@ void mono_tracking(const std::shared_ptr<openvslam::config>& cfg,
 
             if (!img.empty() && (i % frame_skip == 0)) {
                 // input the current frame and estimate the camera pose
-                SLAM.feed_monocular_frame(img,  frame.timestamp_, mask);// frame.timestamp_ 只是控制帧率
+                SLAM.feed_monocular_frame_gnss(img,  frame.timestamp_, mask, gnss_Lists );// frame.timestamp_ 只是控制帧率
             }
 
             const auto tp_2 = std::chrono::steady_clock::now();

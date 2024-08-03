@@ -7,7 +7,7 @@
 #include "openvslam/data/bow_vocabulary.h"
 
 
-//#include "API_GNSS_ENU_TXT_YAML.h" // 自己的类
+#include "openvslam/gnss_src/API_GNSS_ENU_TXT_YAML.h" // 自己的类
 
 
 #include <memory>
@@ -110,7 +110,8 @@ public:
 
     //! Feed a monocular frame to SLAM system
     //! (NOTE: distorted images are acceptable if calibrated)
-    Mat44_t feed_monocular_frame(const cv::Mat& img, const double timestamp, const cv::Mat& mask = cv::Mat{});
+    Mat44_t feed_monocular_frame_gnss(const cv::Mat& img, const double timestamp, const cv::Mat& mask = cv::Mat{},std::vector<gnss_data> &gnss_Lists );
+    Mat44_t feed_monocular_frame(const cv::Mat& img, const double timestamp, const cv::Mat& mask = cv::Mat{} );
 
     //! Feed a stereo frame to SLAM system
     //! (Note: Left and Right images must be stereo-rectified)

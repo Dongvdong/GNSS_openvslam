@@ -79,16 +79,14 @@ find_package(Eigen3 3.3 REQUIRED)
 find_package(yaml-cpp REQUIRED)
 
 #设置opencv安装路径 手动指定
-<<<<<<< HEAD
+
 #set( CMAKE_PREFIX_PATH "/home/r9000k/v1_software/opencv/opencv349/install")
 #set( CMAKE_PREFIX_PATH "/home/r9000k/v1_software/opencv/opencv455/install")
 set( CMAKE_PREFIX_PATH "/home/dongdong/1sorftware/1work/opencv/opencv455/install")
 #set( CMAKE_PREFIX_PATH "/home/dongdong/1sorftware/1work/opencv/opencv349/install")
-=======
-set(APPEND CMAKE_PREFIX_PATH "/home/r9000k/v1_software/opencv/opencv349/install")
-set(APPEND CMAKE_PREFIX_PATH "/home/dongdong/1sorftware/1work/opencv/opencv455/install")
-set(APPEND CMAKE_PREFIX_PATH "/home/r9000k/v1_software/opencv/opencv455/install")
->>>>>>> 9107391a6a7e3b080d52a7ac7dd13a0dce063f2a
+
+
+
 #find_package(OpenCV REQUIRED)
 #include_directories(${OpenCV_INCLUDE_DIRS})
 
